@@ -1,9 +1,8 @@
 import { createStatusedError } from './helpers/errorCreators';
 import express from 'express';
+import { PORT } from './config';
 
 const app: express.Application = express();
-
-const PORT = 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

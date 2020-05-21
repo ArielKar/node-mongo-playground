@@ -1,0 +1,23 @@
+{
+  "name": "simp-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./dist/index.js",
+    "compile": "tsc -p tsconfig.json -w",
+    "start-dev": "concurrently \"npm run compile\" \"npm run dev\""
+  },
+  "author": "Ariel Karmazin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.3"
+  }
+}

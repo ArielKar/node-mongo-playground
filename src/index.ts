@@ -1,15 +1,17 @@
 import { createStatusedError } from './helpers/errorCreators';
 import express from 'express';
 import { PORT } from './config';
+import connectToDB from './db';
+import router from './routes';
+
+connectToDB();
 
 const app: express.Application = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req: express.Request, res: express.Response) => {
-    res.send("Online!");
-});
+app.use('', router);
 
 app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     const statusedError: StatusedError = createStatusedError('not found', 404)
